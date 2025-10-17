@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Wendemalgueda Paul KABORÉ</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #ffffff;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+    header {
+      background: #0D47A1;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+    section { padding: 60px 20px; text-align: center; }
+    h2 { margin-bottom: 20px; color: #0D47A1; }
+    .btn {
+      display: inline-block;
+      background: #FFD700;
+      color: #0D47A1;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover { background: #FFC107; }
+    .skills, .services, .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    .card {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s, color 0.3s;
+    }
+    form input, form textarea {
+      width: 100%; padding: 10px; margin: 8px 0;
+      border-radius: 6px; border: 1px solid #ccc;
+    }
+    form button {
+      background: #0D47A1; color: white; border: none;
+      padding: 12px; border-radius: 8px;
+      cursor: pointer; font-weight: bold;
+    }
+    form button:hover { background: #1565C0; }
+    footer {
+      background: #0D47A1; color: white;
+      text-align: center; padding: 20px;
+    }
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #25D366; color: white;
+      border-radius: 50%; padding: 15px; font-size: 24px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      text-decoration: none; z-index: 1000;
+    }
+    /* ==== DARK MODE ==== */
+    body.dark {
+      background: #121212;
+      color: #f0f0f0;
+    }
+    body.dark header { background: #1E1E1E; }
+    body.dark h2 { color: #FFD700; }
+    body.dark .card { background: #1E1E1E; color: #f0f0f0; }
+    body.dark form input, body.dark form textarea {
+      background: #2C2C2C; color: #fff; border: 1px solid #555;
+    }
+    body.dark footer { background: #1E1E1E; }
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .dark-toggle, .lang-toggle {
+      cursor: pointer;
+      background: #FFD700;
+      color: #0D47A1;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    body.dark .dark-toggle {
+      background: #0D47A1;
+      color: #FFD700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Wendemalgueda Paul KABORÉ</h1>
+    <nav>
+      <a href="#home" data-fr="Accueil" data-en="Home">Accueil</a>
+      <a href="#about" data-fr="À propos" data-en="About">À propos</a>
+      <a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services" data-fr="Services" data-en="Services">Services</a>
+      <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+    </nav>
+    <div class="controls">
+      <button class="dark-toggle" onclick="toggleDark()">🌙 Mode sombre</button>
+      <button class="lang-toggle" onclick="toggleLang()">🇫🇷 / 🇬🇧</button>
+    </div>
+  </header>
+
+  <!-- Accueil -->
+  <section id="home">
+    <h2 data-fr="👋 Bienvenue" data-en="👋 Welcome">👋 Bienvenue</h2>
+    <p data-fr="Je suis Wendemalgueda Paul KABORÉ, Freelance en Web Graphiste, Développeur Web & Formateur Multimédia."
+       data-en="I am Wendemalgueda Paul KABORÉ,Freelance in Web Designer, Web Developer & Multimedia Trainer.">
+       Je suis Wendemalgueda Paul KABORÉ, Freelance en Web Graphiste, Développeur Web & Formateur Multimédia.
+    </p>
+    <a href="#portfolio" class="btn" data-fr="Découvrir mon travail" data-en="See my work">Découvrir mon travail</a>
+  </section>
+
+  <!-- À propos -->
+  <section id="about">
+    <h2 data-fr="À propos" data-en="About">À propos</h2>
+    <p data-fr="Passionné par le digital, j’accompagne les entreprises et particuliers dans la création de solutions modernes et efficaces."
+       data-en="Passionate about digital, I help businesses and individuals build modern and effective solutions.">
+       Passionné par le digital, j’accompagne les entreprises et particuliers dans la création de solutions modernes et efficaces.
+    </p>
+  </section>
+
+  <!-- Compétences -->
+  <section id="skills">
+    <h2 data-fr="Compétences" data-en="Skills">Compétences</h2>
+    <div class="skills">
+      <div class="card" data-fr="💻 HTML / CSS / JavaScript" data-en="💻 HTML / CSS / JavaScript">💻 HTML / CSS / JavaScript</div>
+      <div class="card" data-fr="🎨 Design Graphique" data-en="🎨 Graphic Design">🎨 Design Graphique</div>
+      <div class="card" data-fr="📱 Développement Web" data-en="📱 Web Development">📱 Développement Web</div>
+      <div class="card" data-fr="📊 SEO" data-en="📊 SEO">📊 SEO</div>
+      <div class="card" data-fr="🌍 Traduction (FR/EN/MOORE)" data-en="🌍 Translation (FR/EN/MOORE)">🌍 Traduction (FR/EN/MOORE)</div>
+      <div class="card" data-fr="📝 Transcription multilingue" data-en="📝 Transcription multilingue">📝 Transcription</div>
+      <div class="card" data-fr="🌍 Voix Off" data-en="🌍 Voice Over">🌍 Voix Off (Mooré/Francais/Anglais)</div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2 data-fr="Mes réalisations" data-en="Creations & Executions">Mes Réalisations</h2>
+    <div class="portfolio-item">
+      <img src="images/Tutor-ai.jpg" alt="Projet de transcription LOFT2.0 Religious" loading="lazy">
+      <div class="portfolio-info">
+      <h3 data-fr="Vérificateur de Transcription en langue Mooré/Mossi du Burkina" data-en="Mooré/Mossi Burkina Faso Transcription Reviewer">Projets dans le domaine de l'IA (de la Transcription à la Voix Off)</h3>
+      <p data-fr="J'ai accomplie plusieurs projet de transcription LOFT2.0 similaires en langue Mooré pour plusieurs entreprises (PROSESSOR.AI Data & Language Services; LXT; Skyfall AI). J'ai piloté ces projets en qualité Vérificateur de Transcription. En fin de projet, j'ai obtenu la note 5/5 sur upwork par les employeurs. Mon rôle était de vérifier la Transcription et d'en évaluer le Transcriptioniste. Après avoir terminé une transcription, ils me la soumettent pour vérification. Je fais un rapport au travailleurs en leur faisant aussi des propositions pour améliorer leur travail au risque d'être rejetté. Chaque transcriptionniste est noté de 1 à 5 et la note de 1 disqualifie le travail et s'en suit une rejection. Je procède aussi à la correction en tant que Expert LOFT 2.0 c'est à dire en Segmentation, Annotations, PII, 30-second, 0.5 Rule, Speaker turns, 21st Speaker in the tasks, 100 ms buffer."
+       data-en="I completed more similar LOFT 2.0 Transcription Projets in Mooré language for these Entreprises  (PROSESSOR.AI Data & Language Services; LXT; Skyfall AI). I drived these projects as a Mooré/Mossi Transcription Reviewer. In the End, I got the rate of 5/5 on Upwork by the employers. My duty was to verify the Quality of Transcribers work and make Evaluation. After Transcribers completed their Question ID, they submitted them in the reviewer pool where I must control their work in detail. I must write a feedback for the transcriber own work and provide a Quality Rate from 1 to 5. When the Quality Rate is 1, I process to reject the Task. I must do also proofreading for tasks with mistakes because I am expert in LOFT Segmentation, Annotations, PII, 30-second, 0.5 Rule, Speaker turns, 21st Speaker in the tasks, 100 ms buffer. ">
+       Travail de Vérification de transcription pour une société dans le domaine de l'Intelligence Artificielle bouclé avec succès..</p>
+       <h3 data-fr="Voix Off en langue Mooré" data-en=" Voice Over in Mooré language"></h3>
+      <p data-fr="J'ai accomplie un projet de la Voix Off pour WORLD SCHOOLBOOKS dans le domaine de l'IA. En fin de projet, le delai et la qualité sont respectés. J'ai eu la note de 5/5 de l'employeur avec un bonus pour récompenser l'excellence"
+       data-en="I completed well this Voice Over project for WORLD SCHOOLBOOKS AI. I respected the deadline and the quality of recording. So I got a rate of 5/5 from the Employer with a Bonus as reward for the excellent job done">
+       </p>
+      </div>
+      <div class="portfolio-item">
+      <img src="images/logos.jpg" alt="Projet de transcription LOFT2.0 Religious" loading="lazy">
+      <div class="portfolio-info">
+      <h3 data-fr="Quelques Design Logos pour Entreprises " data-en="Some Design Creating Logos for Enterprises">Création de logos pour sociétés et Entreprises</h3>
+      <p data-fr="J'ai réalisé plus de 100 logos pour entreprises en respectant le chart graphique"
+       data-en="I accomplised more than 100 logos for Entreprises according the Graphic Chart.">
+       Le logo est une identité d'une entreprise et sa conception doit aller dans ce sens. Dès qu'il y a un contrat entre nous et vous, notre responsabilité est de satisfaire ses exigences visuelles. Toutes nos créations ont trouvé satisfaction</p>
+      </div>
+      <div class="portfolio-item">
+      <img src="images/site-web.jpg" alt="Web Design" loading="lazy">
+      <div class="portfolio-info">
+      <h3 data-fr="Quelques Sites web" data-en="Some Web Design">Création de sites web responsive / Design Web responsive </h3>
+      <p data-fr="J'ai réalisé plusieurs projet de sites web, de portfolio à des sites vitrines pour entreprises"
+       data-en="I accomplised more Design Web Projects from Portfolio to Design Web for Entreprises.">
+       Le site web, qu'il soit une vitrine ou e-commerce est un impératif pour vous démarquer de toutes les autres entreprises.Vous aurez enfin votre nom de domaine et sans perturbation. Il inspire le sérieux et confiance</p>
+      </div>
+      <img src="images/design.jpg" alt=" Design" loading="lazy">
+      <div class="portfolio-info">
+      <h3 data-fr="Design graphique" data-en=" Design Graphic">Création de vusiels </h3>
+      <p data-fr="J'ai réalisé plusieurs visuels (Kakemono; Affiches) pour des entreprises"
+       data-en="I created more Design graphic for Entreprises.">
+       Toute entreprise a besoin de visuels pour se faire connaître... Une image parle plus que 1000 mots</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2 data-fr="Services" data-en="Services">Services</h2>
+    <div class="services">
+      <div class="card" data-fr="🌐 Création de sites modernes" data-en="🌐 Modern Websites">🌐 Création de sites modernes</div>
+      <div class="card" data-fr="📈 Référencement SEO" data-en="📈 SEO Optimization">📈 Référencement SEO</div>
+      <div class="card" data-fr="🎓 Formation multimédia" data-en="🎓 Multimedia Training">🎓 Formation multimédia</div>
+      <div class="card" data-fr="📝 Traduction multilingue" data-en="📝 Multilingue Translation ">📝 Traduction</div>
+      <div class="card" data-fr="📝 Transcription Multilingue" data-en="📝 Multilingue Transcription">📝 Transcription</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 data-fr="✉️ Contact" data-en="✉️ Contact">✉️ Contact</h2>
+    <p data-fr="Un projet ? Une idée ? Parlons-en !" data-en="A project? An idea? Let’s talk!">
+      Un projet ? Une idée ? Parlons-en !
+    </p>
+    <form>
+      <input type="text" placeholder="Nom / Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Votre message / Your message" rows="5"></textarea>
+      <button type="submit" data-fr="Envoyer" data-en="Send">Envoyer</button>
+    </form>
+      <p>Ou Envoyez-moi un mail sur: <a href="mailto:ayaminter.pk@gmail.com">ayaminter.pk@gmail.com</a></p>
+
+    <a href="https://wa.me/22676992319" target="_blank" 
+       style="display:inline-block; margin-top:20px; background:#25D366; color:#fff; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:bold;">
+       💬 WhatsApp
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Wendemalgueda Paul KABORÉ - Tous droits réservés / All rights reserved</p>
+  </footer>
+
+  <!-- Icône flottante WhatsApp -->
+  <a href="https://wa.me/22676992319" class="whatsapp-float" target="_blank">💬</a>
+
+  <!-- Scripts -->
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+    }
+    function toggleLang() {
+      const elements = document.querySelectorAll("[data-fr]");
+      elements.forEach(el => {
+        if (document.documentElement.lang === "fr") {
+          el.textContent = el.getAttribute("data-en");
+        } else {
+          el.textContent = el.getAttribute("data-fr");
+        }
+      });
+      document.documentElement.lang = (document.documentElement.lang === "fr") ? "en" : "fr";
+    }
+  </script>
+
+</body>
+</html>
